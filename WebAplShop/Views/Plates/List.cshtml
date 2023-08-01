@@ -1,0 +1,29 @@
+﻿@using WebAplShop.Data.Models
+@model IEnumerable<Plate>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width-device-width" />
+	<title>List</title>
+</head>
+<body>
+	<h2>All plates</h2>
+	@{
+		foreach(var plate in Model)
+		{<div>
+			<h2>Record name:@plate.name</h2>
+			<p>Price: @plate.price.ToString("c")</p>
+			</div>
+			
+		}
+	}
+</body>
+</html>
+
+
+
