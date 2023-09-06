@@ -1,7 +1,7 @@
-﻿using WebAplShop.Data.Interfaces;
-using WebAplShop.Data.Models;
+﻿using VinylRecords.Data.Interfaces;
+using VinylRecords.Data.Models;
 
-namespace WebAplShop.Mocks
+namespace VinylRecords.Mocks
 {
     public class MockCategory : IPlateCategorizer
     {

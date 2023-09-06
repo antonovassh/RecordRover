@@ -1,22 +1,27 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WebAplShop.Data.Interfaces;
+using VinylRecords.Data.Interfaces;
+using VinylRecords.ViewModels;
 
-namespace WebAplShop.Controlers
+namespace VinylRecords.Controlers
 {
     public class PlatesController : Controller
     {
-        private readonly IStorekeeper _storekeeper;
+        private readonly IAllPlates _storekeeper;
         private readonly IPlateCategorizer _plateCategorizer;
 
-        public PlatesController (IStorekeeper storekeeper, IPlateCategorizer plateCategorizer)
+        public PlatesController (IAllPlates storekeeper, IPlateCategorizer plateCategorizer)
         {
             _storekeeper = storekeeper;
             _plateCategorizer = plateCategorizer;
         }
         public ViewResult List()
         {
-            var plates = _storekeeper.Plates;
-            return View(plates);
+            ViewBag.Title = "Pages with plates";
+           PlatesListViewModel obj = new PlatesListViewModel();
+            obj.getAllPlates = _storekeeper.Plates;
+            obj.currCategory = "Plates";
+
+            return View(obj);
         }
     }
 }

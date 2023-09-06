@@ -1,29 +1,88 @@
-﻿@using WebAplShop.Data.Models
-@model IEnumerable<Plate>
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-<!DOCTYPE html>
-<html>
-<head>
-	<meta name="viewport" content="width-device-width" />
-	<title>List</title>
-</head>
-<body>
-	<h2>All plates</h2>
-	@{
-		foreach(var plate in Model)
-		{<div>
-			<h2>Record name:@plate.name</h2>
-			<p>Price: @plate.price.ToString("c")</p>
-			</div>
-			
-		}
-	}
-</body>
-</html>
+﻿@using VinylRecords.ViewModels
+@model PlatesListViewModel
 
+	<h1>All plates</h1>
+	<h3>@Model.currCategory</h3>
+    <div class="container">
+        <div class="row">
+        @{
+            var list = Model.getAllPlates.ToList();
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list.Count - i > 3)
+                {
+                   
+
+                <div class="col-sm-4">
+                    <img class="img-thumbnail" src="@list[i].img" alt="@list[i].name" />
+                    <h2>@list[i].name</h2>
+                    <p>@list[i].shortDescription</p>
+                    <p>Price: @list[i].price.ToString("c")</p>
+                    <p><a class="btn btn-warning" href="#">Details</a></p>
+                </div>
+                <div class="col-sm-4">
+                    <img class="img-thumbnail" src="@list[i+1].img" alt="@list[i+1].name" />
+                    <h2>@list[i+1].name</h2>
+                    <p>@list[i+1].shortDescription</p>
+                    <p>Price: @list[i+1].price.ToString("c")</p>
+                    <p><a class="btn btn-warning" href="#">Details</a></p>
+                </div>
+                <div class="col-sm-4">
+                    <img class="img-thumbnail" src="@list[i+2].img" alt="@list[i+2].name" />
+                        <h2>@list[i+2].name</h2>
+                        <p>@list[i+2].shortDescription</p>
+                        <p>Price: @list[i+2].price.ToString("c")</p>
+                    <p><a class="btn btn-warning" href="#">Details</a></p>
+                </div>
+
+                i = i + 2;
+                }
+                else if (list.Count - i > 2)
+                {
+                
+
+                    <div class="col-sm-4">
+                        <img class="img-thumbnail" src="@list[i].img" alt="@list[i].name" />
+                        <h2>@list[i].name</h2>
+                        <p>@list[i].shortDescription</p>
+                        <p>Price: @list[i].price.ToString("c")</p>
+                        <p><a class="btn btn-warning" href="#">Details</a></p>
+                    </div>
+                    <div class="col-sm-4">
+                        <img class="img-thumbnail" src="@list[i+1].img" alt="@list[i+1].name" />
+                        <h2>@list[i+1].name</h2>
+                        <p>@list[i+1].shortDescription</p>
+                        <p>Price: @list[i+1].price.ToString("c")</p>
+                        <p><a class="btn btn-warning" href="#">Details</a></p>
+                    </div>
+
+                    i = i + 1;
+                }
+                else if (list.Count - i >= 1)
+                {
+                    <div class="col-sm-4">
+                        <img class="img-thumbnail" src="@list[i].img" alt="@list[i].name" />
+                        <h2>@list[i].name</h2>
+                        <p>@list[i].shortDescription</p>
+                        <p>Price: @list[i].price.ToString("c")</p>
+                        <p><a class="btn btn-warning" href="#">Details</a></p>
+                    </div>
+                }
+        }
+
+        //foreach (var plate in Model.getAllPlates)
+        //{
+        //    <div class="col-sm-4">
+        //        <img class="img-thumbnail" src="@plate.img" alt="@plate.name" />
+        //        <h2>@plate.name</h2>
+        //        <p>@plate.shortDescription</p>
+        //        <p>Price: @plate.price.ToString("c")</p>
+        //        <p><a class="btn btn-warning" href="#">Details</a></p>
+        //    </div>
+        //}
+    }
+        </div>
+    </div>
 
 

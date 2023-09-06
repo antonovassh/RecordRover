@@ -1,4 +1,4 @@
-﻿namespace WebAplShop.Data.Models
+﻿namespace VinylRecords.Data.Models
 {
     public class Plate
     {

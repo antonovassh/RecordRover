@@ -1,6 +1,6 @@
-﻿using WebAplShop.Data.Models;
+﻿using VinylRecords.Data.Models;
 
-namespace WebAplShop.Data.Interfaces
+namespace VinylRecords.Data.Interfaces
 
 
 {

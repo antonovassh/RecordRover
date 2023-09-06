@@ -1,9 +1,9 @@
-﻿using WebAplShop.Data.Interfaces;
-using WebAplShop.Data.Models;
+﻿using VinylRecords.Data.Interfaces;
+using VinylRecords.Data.Models;
 
-namespace WebAplShop.Mocks
+namespace VinylRecords.Mocks
 {
-    public class MockPlates : IStorekeeper
+    public class MockPlates : IAllPlates
     {
         private readonly IPlateCategorizer _categoryPlates = new MockCategory();
         public IEnumerable<Plate> Plates
@@ -15,7 +15,7 @@ namespace WebAplShop.Mocks
                      name = "Depeche Mode – Enjoy The Silence",
                      shortDescription = "\"Enjoy the Silence\" is a song by English electronic music band Depeche Mode." ,
                      longDescription = "Format: Vinyl, 12\", 45 RPM, Maxi-Single\r\nCountry: UK\r\nReleased: 1990",
-                     img = "https://upload.wikimedia.org/wikipedia/ru/9/9a/Depeche_Mode_Enjoy_the_Silence_1990.jpg",
+                     img = "/img/Depeche_Mode_Enjoy_the_Silence_1990.jpg",
                      isFavourite = true,
                      price = 20,
                      avaliable = true,
@@ -25,7 +25,7 @@ namespace WebAplShop.Mocks
                      name = "Jimi Hendrix – Are You Experienced",
                      shortDescription = "Are You Experienced is the debut studio album by the rock band." ,
                      longDescription = "Format: Vinyl, 12\", 45 RPM, Maxi-Single\r\nCountry: UK\r\nReleased: 1967",
-                     img = "https://thesoundofvinyl.us/cdn/shop/products/2545585_500x500.jpg?v=1583485031",
+                     img = "/img/jimmie.jpg",
                      isFavourite = true,
                      price = 35,
                      avaliable = true,
@@ -35,7 +35,7 @@ namespace WebAplShop.Mocks
                      name = "Louis Armstrong In – Los Angeles",
                      shortDescription = "Louis Armstrong is rightly celebrated as a master jazz trumpeter, but his distinctive gravelly-voiced singing also had a huge influence on later artists." ,
                      longDescription = "Format: Vinyl, 12\", 45 RPM, Maxi-Single\r\nCountry: UK\r\nReleased: 1970",
-                     img = "https://i.discogs.com/c0gI_521iQrDCqdu1lwNHo9Vgc0396qc0HLAF_pQUSg/rs:fit/g:sm/q:90/h:500/w:500/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ1ODQw/NDMtMTM2OTA4NzY3/Ni03OTkzLmpwZWc.jpeg",
+                     img = "/img/louis.jpg",
                      isFavourite = true,
                      price = 30,
                      avaliable = true,
@@ -45,9 +45,49 @@ namespace WebAplShop.Mocks
                      name = "Weather Report – 8:30",
                      shortDescription = "8:30 is the second live album from the jazz fusion group Weather Report, issued in 1979." ,
                      longDescription = "Format: Vinyl, 12\", 45 RPM, Maxi-Single\r\nCountry: US\r\nReleased: 1979",
-                     img = "https://upload.wikimedia.org/wikipedia/en/8/88/Weather_Report_830.jpg",
+                     img = "/img/Weather_Report.jpg",
                      isFavourite = true,
                      price = 25,
+                     avaliable = true,
+                     Category = _categoryPlates.AllCategories.Last()
+                  },
+                  new Plate {
+                     name = "The Weeknd - Starboy",
+                     shortDescription = "Starboy is the third studio album by Canadian singer the Weeknd." ,
+                     longDescription = "Format: Vinyl, 12\", 25 RPM, Maxi-Single\r\nCountry: US\r\nReleased: 2016",
+                     img = "/img/starboy.jpg",
+                     isFavourite = true,
+                     price = 30,
+                     avaliable = true,
+                     Category = _categoryPlates.AllCategories.Last()
+                  },
+                  new Plate {
+                     name = "The Beatles - Abbey Road",
+                     shortDescription = "Abbey Road is the eleventh studio album by the English rock band the Beatles." ,
+                     longDescription = "Format: Vinyl, 12\", 25 RPM, Maxi-Single\r\nCountry: UK\r\nReleased: 1970",
+                     img = "/img/abbey-road.jpg",
+                     isFavourite = true,
+                     price = 50,
+                     avaliable = true,
+                     Category = _categoryPlates.AllCategories.Last()
+                  },
+                  new Plate {
+                     name = "Pink Floyd - The dark side of the moon",
+                     shortDescription = "The Dark Side of the Moon is the eighth studio album by the English rock band Pink Floyd." ,
+                     longDescription = "Format: Vinyl, 10\", 15 RPM, Maxi-Single\r\nCountry: UK\r\nReleased: 1973",
+                     img = "/img/pink-floyd.jpg",
+                     isFavourite = true,
+                     price = 25,
+                     avaliable = true,
+                     Category = _categoryPlates.AllCategories.Last()
+                  },
+                  new Plate {
+                     name = "The Rolling Stones - Exile on Main St.",
+                     shortDescription = "Exile on Main St. is the 10th British and 12th American studio album by the English rock band the Rolling Stones.." ,
+                     longDescription = "Format: Vinyl, 10\", 15 RPM, Maxi-Single\r\nCountry: UK\r\nReleased: 1972",
+                     img = "/img/RolStones.jpg",
+                     isFavourite = true,
+                     price = 35,
                      avaliable = true,
                      Category = _categoryPlates.AllCategories.Last()
                   },
