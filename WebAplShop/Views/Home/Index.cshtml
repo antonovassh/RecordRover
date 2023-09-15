@@ -1,16 +1,22 @@
-﻿@using VinylRecords.ViewModels
-@model PlatesListViewModel
+﻿
+@{
+    ViewData["Title"] = "VinylRecordsHome";
+}
 
+<h1>Index</h1>
+
+@using VinylRecords.ViewModels
+@model PlatesListViewModel
 <style>
     .fixed-size-image {
         width: 400px;
         height: 400px;
     }
 </style>
-	<h1>All lates</h1>
-	<h3>@Model.currCategory</h3>
-    <div class="container">
-        <div class="row">
+<h1>All plates</h1>
+<h3>@Model.currCategory</h3>
+<div class="container">
+    <div class="row">
         @{
             var list = Model.getAllPlates.ToList();
 
@@ -19,33 +25,34 @@
                 if (list.Count - i > 3)
                 {
 
-                <div class="col-sm-4">
+
+                    <div class="col-sm-4">
                         <img class="img-thumbnail fixed-size-image" src="@list[i].img" alt="@list[i].name" />
-                    <h2>@list[i].name</h2>
-                    <p>@list[i].shortDescription</p>
-                    <p>Price: @list[i].price.ToString("c")</p>
-                    <p><a class="btn btn-warning" href="#">Details</a></p>
-                </div>
-                <div class="col-sm-4">
+                        <h2>@list[i].name</h2>
+                        <p>@list[i].shortDescription</p>
+                        <p>Price: @list[i].price.ToString("c")</p>
+                        <p><a class="btn btn-warning" href="#">Details</a></p>
+                    </div>
+                    <div class="col-sm-4">
                         <img class="img-thumbnail fixed-size-image" src="@list[i+1].img" alt="@list[i+1].name" />
-                    <h2>@list[i+1].name</h2>
-                    <p>@list[i+1].shortDescription</p>
-                    <p>Price: @list[i+1].price.ToString("c")</p>
-                    <p><a class="btn btn-warning" href="#">Details</a></p>
-                </div>
-                <div class="col-sm-4">
+                        <h2>@list[i+1].name</h2>
+                        <p>@list[i+1].shortDescription</p>
+                        <p>Price: @list[i+1].price.ToString("c")</p>
+                        <p><a class="btn btn-warning" href="#">Details</a></p>
+                    </div>
+                    <div class="col-sm-4">
                         <img class="img-thumbnail fixed-size-image" src="@list[i+2].img" alt="@list[i+2].name" />
                         <h2>@list[i+2].name</h2>
                         <p>@list[i+2].shortDescription</p>
                         <p>Price: @list[i+2].price.ToString("c")</p>
-                    <p><a class="btn btn-warning" href="#">Details</a></p>
-                </div>
+                        <p><a class="btn btn-warning" href="#">Details</a></p>
+                    </div>
 
-                i = i + 2;
+                    i = i + 2;
                 }
                 else if (list.Count - i > 2)
                 {
-                
+
 
                     <div class="col-sm-4">
                         <img class="img-thumbnail fixed-size-image" src="@list[i].img" alt="@list[i].name" />
@@ -74,12 +81,9 @@
                         <p><a class="btn btn-warning" href="#">Details</a></p>
                     </div>
                 }
+            }
+
+
         }
-
-  
-    }
-        </div>
     </div>
-
-
-
+</div>
