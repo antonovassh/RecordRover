@@ -3,6 +3,7 @@ using VinylRecords.Data.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using VinylRecords.Data.Reposytory;
 using Microsoft.Extensions.Configuration;
+using VinylRecords.Data.Models;
 
 namespace VinylRecords;
 
@@ -23,7 +24,11 @@ public class Startup
 	{
 		services.AddTransient<IAllPlates, PlateRepository>();
 		services.AddTransient<IPlateCategorizer, CategoryRepository>();
+		services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+		services.AddScoped(sp => ShopCart.GetCart(sp));
 		services.AddMvc(option => option.EnableEndpointRouting = false);
+		services.AddMemoryCache();
+		services.AddSession();
 	}
 
 	public void ConfigureDb(IConfiguration config, IServiceCollection services)
@@ -37,6 +42,7 @@ public class Startup
 		app.UseDeveloperExceptionPage();
 		app.UseStatusCodePages();
 		app.UseStaticFiles();
+		app.UseSession();
 		app.UseMvcWithDefaultRoute();
 
        

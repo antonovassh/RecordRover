@@ -13,6 +13,7 @@ public class AppDBContent : DbContext
     public DbSet<Plate> Plates { get; set; }
 
     public DbSet<Category> Category { get; set; }
+    public DbSet<ShopCarItem> ShopCarItem { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
