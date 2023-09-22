@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using VinylRecords.Data.Reposytory;
 using Microsoft.Extensions.Configuration;
 using VinylRecords.Data.Models;
+using Microsoft.AspNetCore.Routing;
+using System.IO;
 
 namespace VinylRecords;
 
@@ -43,8 +45,20 @@ public class Startup
 		app.UseStatusCodePages();
 		app.UseStaticFiles();
 		app.UseSession();
-		app.UseMvcWithDefaultRoute();
+		//app.UseMvcWithDefaultRoute();
+		app.UseMvc(routes =>
+		{
+            routes.MapRoute(
+            name: "default",
+            template: "{controller=Home}/{action=Index}/{id?}"
+            );
 
+            routes.MapRoute(
+            name: "categoryFilter",
+            template: "Plate/{action}/{category?}",
+            defaults: new { controller = "Home", action = "List" }
+            );
+        });
        
         using (var scope = app.ApplicationServices.CreateScope())
         {
