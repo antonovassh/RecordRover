@@ -15,6 +15,8 @@ public class AppDBContent : DbContext
     public DbSet<Category> Category { get; set; }
     public DbSet<ShopCarItem> ShopCarItem { get; set; }
 
+    public DbSet<Order> Order { get; set; }
+    public DbSet<OrderDetail> OrderDetail { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         if (!optionsBuilder.IsConfigured)

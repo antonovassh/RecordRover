@@ -31,7 +31,7 @@
                         <h2>@list[i].name</h2>
                         <p>@list[i].shortDescription</p>
                         <p>Price: @list[i].price.ToString("c")</p>
-                        <p><a class="btn btn-warning" href="#">Details</a></p>
+                        <p><a class="btn btn-warning" href="@Url.Action("addToCart", "ShopCart", new { id = list[i].id })">Add to cart</a></p>
                     </div>
                     <div class="col-sm-4">
                         <img class="img-thumbnail fixed-size-image" src="@list[i+1].img" alt="@list[i+1].name" />
