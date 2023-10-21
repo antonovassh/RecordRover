@@ -1,4 +1,4 @@
-# VinylRecordsShop
+# RecordRover
 Web application that represents vinyl record store, was builded using ASP.NET, Entity Framework and MVC model.  It provides a platform for managing and browsing a collection of vinyl records for sale.
 # Features
 * Browse Vinyl Records: Browse through a collection of vinyl records, view details, and cover images.
